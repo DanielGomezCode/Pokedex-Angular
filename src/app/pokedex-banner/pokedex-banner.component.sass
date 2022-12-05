@@ -1,0 +1,105 @@
+.inicio-banner
+  display: flex
+  justify-content: space-between
+  padding: 50px
+  transition: .5s
+
+.banner-imagen img
+  width: 450px
+
+.banner-informacion
+  display: flex
+  flex-direction: column
+
+  h1
+    font-size: 100px
+    font-family: 'impact', sans-serif
+    line-height: 100px
+    color: black
+    font-weight: 400
+
+  p
+    font-size: 20px
+    padding-right: 70px
+    font-family: 'poppins'
+    font-weight: 800
+    line-height: 20px
+    padding-top: 20px
+    color: black
+    font-weight: 500
+
+  a
+    display: inline-block
+    margin-top: 40px
+    padding: 8px 20px
+    background-color: red
+    border-radius: 100px
+    width: 30%
+    text-align: center
+    border: 4px solid rgb(255, 255, 255)
+    font-size: 16px
+    text-decoration: none
+    color: white
+    font-family: 'poppins'
+
+    @media screen and (max-width: 1300px)
+  .banner-imagen img
+    width: 300px
+
+@media screen and (max-width: 970px)
+  .banner-informacion
+    h1
+      font-size: 70px
+      line-height: 70px
+
+    p
+      font-size: 16px
+
+    a
+      width: 80%
+
+@media screen and (max-width: 970px)
+  .banner-imagen img
+    width: 250px
+
+  .banner-informacion
+    h1
+      font-size: 50px
+      line-height: 50px
+
+    p
+      font-size: 14px
+      padding-right: 10px
+
+    a
+      width: 80%
+      margin-top: 20px
+      font-size: 14px
+
+@media screen and (max-width: 580px)
+  .inicio-banner
+    width: 100%
+    flex-wrap: wrap
+
+  .banner-informacion
+    order: 1
+    text-align: center
+
+    a
+      width: 100%
+      margin: 20 auto
+
+  .banner-imagen
+    order: 0
+    width: 100%
+    text-align: center
+
+@media screen and (max-width: 410px)
+  .banner-imagen img
+    width: 280px
+
+  .banner-informacion h1
+    font-size: 34px
+    font-family: 'poppins'
+    font-weight: 700
+    line-height: 35px
