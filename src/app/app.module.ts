@@ -11,7 +11,8 @@ import { PokedexUseComponent } from './pokedex-use/pokedex-use.component';
 import { PokedexTeamComponent } from './pokedex-team/pokedex-team.component';
 
 // Servicio
-import { HttpClientModule } from '@angular/common/http' 
+import { HttpClientModule } from '@angular/common/http';
+import { ListaPokemonsComponent } from './lista-pokemons/lista-pokemons.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http'
     PokedexBannerComponent,
     PokedexSidebarComponent,
     PokedexUseComponent,
-    PokedexTeamComponent
+    PokedexTeamComponent,
+    ListaPokemonsComponent,
   ],
   imports: [
     BrowserModule,

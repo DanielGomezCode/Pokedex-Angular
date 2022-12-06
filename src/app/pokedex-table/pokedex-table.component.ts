@@ -102,6 +102,60 @@ const renderNotFound = () => {
   pokeStats!.innerHTML = '';
   pokeId!.textContent = '';
 }
+
+// Tabla pokemon
+const container = document.getElementById("container");
+    const pkmNumber = 151;
+     
+     const fetchPkm = async () => {
+         for (let i = 1; i <= pkmNumber; i++) {
+             await getPkm(i);
+         }
+     }
+   
+     const getPkm = async (id: number) => {
+         const url = 
+         `https://pokeapi.co/api/v2/pokemon/${id}`;
+         const res = await fetch(url);
+         const pokemon = await res.json();
+         createPokemonCard(pokemon);
+     }
+   
+     fetchPkm();
+   
+     function createPokemonCard(pokemon:any) {
+         let pokemonEl = document.createElement("div");
+         pokemonEl.classList.add("pokemones");
+         const pokeInnerHtml = `
+         <div class= "cartas" style=" 
+          background-color: white;
+          height: 250px;
+          width: 250px;
+          padding: 16px;
+          border-radius: 50px;
+          text-align: center;
+          font-family: 'poppins';
+          font-weight: 900;
+          text-transform: uppercase;
+          font-size: 22px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          ">${pokemon.name}
+
+         <img class= "pkm-images" style="
+         height: 60%;
+         width: 60%;" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png"/>
+         
+         <div class="type" style="
+          font-size: 16px;
+         " >Type: ${pokemon.types[0].type.name}</div>
+         </div>
+         `;
+         pokemonEl.innerHTML = pokeInnerHtml;
+         container!.appendChild(pokemonEl);
+     }    
   }
 
 }
